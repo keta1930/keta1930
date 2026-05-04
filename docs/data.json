@@ -1,0 +1,167 @@
+{
+  "personal": {
+    "name": "keta1930",
+    "avatar": {
+      "type": "icon",
+      "icon": "fas fa-user-circle"
+    },
+    "tags": [
+      {
+        "en": "Independent Developer",
+        "zh": "独立开发者"
+      },
+      {
+        "en": "AI Agent Engineer",
+        "zh": "AI Agent工程师"
+      }
+    ],
+    "bio": {
+      "en": "Passionate about building intelligent agent systems and contributing to open-source projects. Focused on Context Engineering and multi-agent development frameworks.",
+      "zh": "专注于构建智能Agent系统并为开源项目做贡献。专注于Context Engineering和多智能体开发框架。"
+    },
+    "contact": [
+      {
+        "type": "email",
+        "icon": "fas fa-envelope",
+        "label": "yandeheng1@gmail.com",
+        "url": "mailto:yandeheng1@gmail.com"
+      },
+      {
+        "type": "github",
+        "icon": "fab fa-github",
+        "label": "GitHub",
+        "url": "https://github.com/keta1930"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "title": "Agent Graph",
+      "url": "https://github.com/keta1930/agent-graph",
+      "stars": 194,
+      "description": {
+        "en": "A Multi-Agent System built on the principles of Context Engineering.",
+        "zh": "基于Context Engineering原则构建的多智能体系统。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": {
+            "en": "View Source",
+            "zh": "查看源码"
+          },
+          "url": "https://github.com/keta1930/agent-graph"
+        }
+      ]
+    },
+    {
+      "title": "Survey-v1-3B-Beta",
+      "url": "https://huggingface.co/keta1933/Survey-v1-3B-Beta",
+      "stars": "New",
+      "description": {
+        "en": "A specialized 3B parameter language model for survey research scenarios, trained on Qwen2.5-3B-Instruct. Features multi-persona simulation, structured reasoning, and standardized JSON output for efficient survey data collection.",
+        "zh": "专门用于调研场景的3B参数语言模型，基于Qwen2.5-3B-Instruct训练。支持多角色模拟、结构化推理和标准化JSON输出，实现高效的调研数据收集。"
+      },
+      "links": [
+        {
+          "type": "huggingface",
+          "icon": "fas fa-robot",
+          "label": {
+            "en": "Hugging Face",
+            "zh": "Hugging Face"
+          },
+          "url": "https://huggingface.co/keta1933/Survey-v1-3B-Beta"
+        },
+        {
+          "type": "modelscope",
+          "icon": "fas fa-cube",
+          "label": {
+            "en": "ModelScope",
+            "zh": "ModelScope"
+          },
+          "url": "https://www.modelscope.cn/models/keta1933/Survey-v1-3B-Beta/summary"
+        }
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "title": {
+        "en": "Simulating Macroeconomic Expectations using LLM Agents",
+        "zh": "使用LLM智能体模拟宏观经济预期"
+      },
+      "url": "https://arxiv.org/abs/2505.17648",
+      "venue": "arXiv • 2025",
+      "badges": [
+        {
+          "type": "venue",
+          "text": "arXiv • 2025"
+        }
+      ],
+      "links": [
+        {
+          "type": "pdf",
+          "icon": "fas fa-file-pdf",
+          "label": {
+            "en": "Read Paper",
+            "zh": "阅读论文"
+          },
+          "url": "https://arxiv.org/abs/2505.17648"
+        }
+      ]
+    }
+  ],
+  "placeholders": {
+    "projects": {
+      "en": "More projects coming soon...",
+      "zh": "更多项目即将到来..."
+    },
+    "papers": {
+      "en": "More papers coming soon...",
+      "zh": "更多论文即将到来..."
+    }
+  },
+  "ui": {
+    "nav": {
+      "about": {
+        "en": "About",
+        "zh": "个人"
+      },
+      "projects": {
+        "en": "Projects",
+        "zh": "项目"
+      },
+      "papers": {
+        "en": "Papers",
+        "zh": "论文"
+      }
+    },
+    "pageHeaders": {
+      "projects": {
+        "title": {
+          "en": "Projects",
+          "zh": "项目"
+        },
+        "subtitle": {
+          "en": "Open-source projects and contributions",
+          "zh": "开源项目和贡献"
+        }
+      },
+      "papers": {
+        "title": {
+          "en": "Papers",
+          "zh": "论文"
+        },
+        "subtitle": {
+          "en": "Research publications and academic contributions",
+          "zh": "研究发表和学术贡献"
+        }
+      }
+    },
+    "footer": {
+      "en": "Built with ❤️ and hosted on GitHub Pages",
+      "zh": "用 ❤️ 构建，托管于 GitHub Pages"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keta1930 - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部导航栏 -->
+        <nav class="navbar">
+            <div class="nav-left">
+                <h1 class="logo">keta1930</h1>
+            </div>
+            <div class="nav-center">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" data-tab="about">
+                        <span data-en="About" data-zh="个人">About</span>
+                    </button>
+                    <button class="nav-tab" data-tab="projects">
+                        <span data-en="Projects" data-zh="项目">Projects</span>
+                    </button>
+                    <button class="nav-tab" data-tab="papers">
+                        <span data-en="Papers" data-zh="论文">Papers</span>
+                    </button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="lang-switcher" id="langSwitcher">
+                    <i class="fas fa-globe"></i>
+                    <span id="currentLang">EN</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 个人页面 -->
+            <section class="tab-content active" id="about">
+                <div class="hero-section">
+                    <div class="hero-left">
+                        <div class="avatar-container">
+                            <div class="avatar">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <h1 class="name">keta1930</h1>
+                        <div class="tags">
+                            <!-- 标签将由JavaScript动态生成 -->
+                        </div>
+                        <p class="bio">
+                            <!-- 简介将由JavaScript动态生成 -->
+                        </p>
+                        <div class="contact-links">
+                            <!-- 联系方式将由JavaScript动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目页面 -->
+            <section class="tab-content" id="projects">
+                <div class="page-header">
+                    <h1 data-en="Projects" data-zh="项目">Projects</h1>
+                    <p data-en="Open-source projects and contributions" data-zh="开源项目和贡献">Open-source projects and contributions</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- 项目卡片将由JavaScript动态生成 -->
+                </div>
+            </section>
+
+            <!-- 论文页面 -->
+            <section class="tab-content" id="papers">
+                <div class="page-header">
+                    <h1 data-en="Papers" data-zh="论文">Papers</h1>
+                    <p data-en="Research publications and academic contributions" data-zh="研究发表和学术贡献">Research publications and academic contributions</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- 论文卡片将由JavaScript动态生成 -->
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p data-en="Built with ❤️ and hosted on GitHub Pages" data-zh="用 ❤️ 构建，托管于 GitHub Pages">
+                Built with ❤️ and hosted on GitHub Pages
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

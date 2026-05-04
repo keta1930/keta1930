@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initScrollReveal();
     initTypewriter();
     initKeyboard();
+    initGalleryLightbox();
     initVisitorCounter();
     updateLoadingBar(80);
 });
@@ -295,15 +296,21 @@ function renderProjects() {
 
 function renderPapers() {
     const grid = document.getElementById('papersGrid');
-    const cards = data.papers.map(p => `<div class="item-card">
-        <div class="item-card-header">
-            <h3 class="item-card-title"><a href="${p.url}" target="_blank">
-                <span data-en="${esc(p.title.en)}" data-zh="${esc(p.title.zh)}">${p.title[lang]}</span>
-            </a></h3>
-        </div>
-        <div>${p.badges.map(b => `<span class="venue-tag">${b.text}</span>`).join('')}</div>
-        <div class="item-card-links">${p.links.map(linkHTML).join('')}</div>
-    </div>`);
+    const cards = data.papers.map(p => {
+        const desc = p.description
+            ? `<p class="item-card-desc" data-en="${esc(p.description.en)}" data-zh="${esc(p.description.zh)}">${p.description[lang]}</p>`
+            : '';
+        return `<div class="item-card">
+            <div class="item-card-header">
+                <h3 class="item-card-title"><a href="${p.url}" target="_blank">
+                    <span data-en="${esc(p.title.en)}" data-zh="${esc(p.title.zh)}">${p.title[lang]}</span>
+                </a></h3>
+            </div>
+            <div>${p.badges.map(b => `<span class="venue-tag">${b.text}</span>`).join('')}</div>
+            ${desc}
+            <div class="item-card-links">${p.links.map(linkHTML).join('')}</div>
+        </div>`;
+    });
     cards.push(phHTML('papers'));
     grid.innerHTML = cards.join('');
 }
@@ -457,6 +464,72 @@ function initScrollReveal() {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
     document.querySelectorAll('.game-panel').forEach(p => obs.observe(p));
+}
+
+/* ── Gallery Lightbox ── */
+
+const GALLERY_CAPTIONS = {
+    coding: {
+        zh: '准备好饮料，准备好音乐，检查精神状态：满格！Vibe Coding，启动！',
+        en: 'Drinks ready, music on, mental state: fully charged! Vibe Coding, engage!'
+    },
+    gaming: {
+        zh: '谁不想在一个悠闲的夜晚，打开电脑，花时间找一个游戏玩玩呢？就算是找游戏也足够激动了吧...',
+        en: 'Who wouldn\'t want to spend a chill evening browsing for the perfect game to play? Even just picking one is exciting enough...'
+    },
+    nature: {
+        zh: '这是我在星露谷最爱的活动：钓鱼！真希望现实也是如此啊...',
+        en: 'This is my favorite thing to do in Stardew Valley: fishing! If only real life were this peaceful...'
+    }
+};
+
+function initGalleryLightbox() {
+    const lightbox = document.getElementById('galleryLightbox');
+    const img = document.getElementById('lightboxImg');
+    const text = document.getElementById('lightboxText');
+    const closeBtn = document.getElementById('lightboxClose');
+    let typing = false;
+
+    document.querySelectorAll('.picture-frame[data-gallery]').forEach(frame => {
+        frame.addEventListener('click', () => {
+            const key = frame.dataset.gallery;
+            const src = frame.querySelector('.frame-image').src;
+            const caption = GALLERY_CAPTIONS[key][lang];
+
+            img.src = src;
+            text.textContent = '';
+            text.classList.remove('typewriter-cursor');
+            lightbox.classList.add('active');
+
+            setTimeout(() => {
+                typing = true;
+                text.classList.add('typewriter-cursor');
+                typeGalleryCaption(text, caption, () => { typing = false; });
+            }, 400);
+        });
+    });
+
+    function close() {
+        lightbox.classList.remove('active');
+        typing = false;
+    }
+
+    closeBtn.addEventListener('click', close);
+    lightbox.querySelector('.lightbox-backdrop').addEventListener('click', close);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) close();
+    });
+}
+
+async function typeGalleryCaption(el, text, done) {
+    el.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+        if (!el.closest('.gallery-lightbox').classList.contains('active')) return;
+        el.textContent += text[i];
+        await sleep(28);
+    }
+    el.classList.remove('typewriter-cursor');
+    if (done) done();
 }
 
 /* ── Loading Screen ── */

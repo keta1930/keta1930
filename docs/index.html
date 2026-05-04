@@ -103,7 +103,7 @@
             <h2 data-en="Life" data-zh="生活">Life</h2>
         </div>
         <div class="gallery-inner">
-            <div class="picture-frame" style="--tilt: -2deg">
+            <div class="picture-frame" style="--tilt: -2deg" data-gallery="coding">
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
@@ -111,7 +111,7 @@
                 </div>
                 <span class="frame-label" data-en="Vibe Coding" data-zh="Vibe Coding">Vibe Coding</span>
             </div>
-            <div class="picture-frame" style="--tilt: 1.5deg">
+            <div class="picture-frame" style="--tilt: 1.5deg" data-gallery="gaming">
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
@@ -119,7 +119,7 @@
                 </div>
                 <span class="frame-label" data-en="Gaming Night" data-zh="游戏之夜">Gaming Night</span>
             </div>
-            <div class="picture-frame" style="--tilt: -1deg">
+            <div class="picture-frame" style="--tilt: -1deg" data-gallery="nature">
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
@@ -129,6 +129,19 @@
             </div>
         </div>
     </section>
+
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <div class="lightbox-frame">
+                <img class="lightbox-img" id="lightboxImg" src="" alt="">
+            </div>
+            <div class="lightbox-caption">
+                <p class="lightbox-text" id="lightboxText"></p>
+            </div>
+            <button class="lightbox-close" id="lightboxClose">✕</button>
+        </div>
+    </div>
 
     <div class="section-divider"><span class="divider-icon" id="divider2">🌷</span></div>
 

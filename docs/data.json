@@ -49,8 +49,8 @@
       "url": "https://huggingface.co/keta1933/Survey-v1-3B-Beta",
       "stars": "New",
       "description": {
-        "en": "A specialized 3B parameter language model for survey research scenarios, trained on Qwen2.5-3B-Instruct. Features multi-persona simulation, structured reasoning, and standardized JSON output.",
-        "zh": "专门用于调研场景的 3B 参数语言模型，基于 Qwen2.5-3B-Instruct 训练。支持多角色模拟、结构化推理和标准化 JSON 输出。"
+        "en": "A role-playing language model specialized for survey research scenarios.",
+        "zh": "一款角色扮演模型，专用于问卷调查研究场景。"
       },
       "links": [
         {
@@ -73,6 +73,10 @@
       "title": {
         "en": "Simulating Macroeconomic Expectations using LLM Agents",
         "zh": "使用 LLM 智能体模拟宏观经济预期"
+      },
+      "description": {
+        "en": "Can LLM agents simulate human macroeconomic expectations?",
+        "zh": "大模型智能体能模拟人类的宏观经济预期吗？"
       },
       "url": "https://arxiv.org/abs/2505.17648",
       "badges": [{ "type": "venue", "text": "arXiv • 2025" }],

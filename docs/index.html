@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="season-spring">
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <p class="loading-title">keta1930</p>
+            <div class="loading-bar"><div class="loading-fill" id="loadingFill"></div></div>
+            <p class="loading-text">Loading...</p>
+        </div>
+    </div>
     <div class="season-overlay" id="seasonOverlay"></div>
     <canvas id="particles"></canvas>
 
@@ -154,6 +161,10 @@
             <div class="footer-links">
                 <a href="mailto:yandeheng1@gmail.com"><i class="fas fa-envelope"></i> yandeheng1@gmail.com</a>
                 <a href="https://github.com/keta1930" target="_blank"><i class="fab fa-github"></i> @keta1930</a>
+            </div>
+            <div class="visitor-counter">
+                <span class="counter-label" data-en="Visitors" data-zh="访客">Visitors</span>
+                <span class="counter-digits" id="visitorCount">------</span>
             </div>
             <p class="footer-text" data-en="Built with ❤️ and hosted on GitHub Pages" data-zh="用 ❤️ 构建，托管于 GitHub Pages">Built with ❤️ and hosted on GitHub Pages</p>
         </div>

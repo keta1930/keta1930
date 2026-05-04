@@ -30,8 +30,10 @@ let pCtx, pW, pH, particles = [];
 /* ── Init ── */
 
 document.addEventListener('DOMContentLoaded', async () => {
+    updateLoadingBar(30);
     data = await loadData();
     if (!data) return;
+    updateLoadingBar(50);
     applyLanguage();
     renderAll();
     applySeason(currentSeason, false);
@@ -44,6 +46,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     initParticles();
     initScrollReveal();
     initTypewriter();
+    initKeyboard();
+    initVisitorCounter();
+    updateLoadingBar(80);
+});
+
+window.addEventListener('load', () => {
+    updateLoadingBar(100);
+    setTimeout(() => {
+        const loader = document.getElementById('loadingScreen');
+        if (loader) { loader.classList.add('done'); setTimeout(() => loader.remove(), 600); }
+    }, 400);
 });
 
 async function loadData() {
@@ -157,7 +170,7 @@ const ambientAudio = {
             const a = new Audio(`audio/${s}.mp3`);
             a.loop = true;
             a.volume = 0;
-            a.preload = 'auto';
+            a.preload = s === currentSeason ? 'auto' : 'none';
             this.tracks[s] = a;
         });
     },
@@ -444,6 +457,43 @@ function initScrollReveal() {
         entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
     document.querySelectorAll('.game-panel').forEach(p => obs.observe(p));
+}
+
+/* ── Loading Screen ── */
+
+function updateLoadingBar(pct) {
+    const fill = document.getElementById('loadingFill');
+    if (fill) fill.style.width = pct + '%';
+}
+
+/* ── Keyboard Shortcuts ── */
+
+function initKeyboard() {
+    const seasonKeys = { '1': 'spring', '2': 'summer', '3': 'fall', '4': 'winter' };
+    document.addEventListener('keydown', e => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (seasonKeys[e.key]) {
+            if (seasonKeys[e.key] !== currentSeason) applySeason(seasonKeys[e.key], true);
+        } else if (e.key.toLowerCase() === 'n') {
+            applyNight(!isNight, true);
+        } else if (e.key.toLowerCase() === 'm') {
+            document.getElementById('audioToggle').click();
+        }
+    });
+}
+
+/* ── Visitor Counter ── */
+
+async function initVisitorCounter() {
+    const el = document.getElementById('visitorCount');
+    if (!el) return;
+    try {
+        const resp = await fetch('https://api.counterapi.dev/v1/keta1930-github-io/visits/up');
+        const data = await resp.json();
+        el.textContent = String(data.count).padStart(6, '0');
+    } catch {
+        el.textContent = '------';
+    }
 }
 
 /* ── Console ── */

@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>keta1930</title>
+    <meta name="description" content="keta1930 — Independent developer building intelligent agent systems. A Stardew Valley themed personal page.">
+    <meta property="og:title" content="keta1930">
+    <meta property="og:description" content="Independent developer building intelligent agent systems.">
+    <meta property="og:image" content="https://keta1930.github.io/images/banner.webp">
+    <meta property="og:url" content="https://keta1930.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="keta1930">
+    <meta name="twitter:description" content="Independent developer building intelligent agent systems.">
+    <meta name="twitter:image" content="https://keta1930.github.io/images/banner.webp">
+    <link rel="icon" href="images/avatar.webp" type="image/webp">
+    <link rel="icon" href="images/avatar.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
@@ -35,6 +47,8 @@
                     <button class="season-btn" data-season="fall" title="Fall">🍂</button>
                     <button class="season-btn" data-season="winter" title="Winter">❄️</button>
                 </div>
+                <button class="icon-btn" id="nightToggle" title="Day/Night">🌙</button>
+                <button class="icon-btn" id="audioToggle" title="Sound">🔇</button>
                 <button class="lang-btn" id="langSwitcher">
                     <span id="currentLang">EN</span>
                 </button>
@@ -45,10 +59,11 @@
     <header class="hero" id="hero">
         <div class="hero-scene">
             <div class="hero-bg-fallback"></div>
-            <img src="images/banner-spring.png" class="hero-bg active" data-season="spring" alt="">
-            <img src="images/banner-summer.png" class="hero-bg" data-season="summer" alt="">
-            <img src="images/banner.png" class="hero-bg" data-season="fall" alt="">
-            <img src="images/banner-winter.png" class="hero-bg" data-season="winter" alt="">
+            <div class="hero-night-overlay"></div>
+            <img src="images/banner-spring.webp" class="hero-bg active" data-season="spring" alt="">
+            <img src="images/banner-summer.webp" class="hero-bg" data-season="summer" alt="">
+            <img src="images/banner.webp" class="hero-bg" data-season="fall" alt="">
+            <img src="images/banner-winter.webp" class="hero-bg" data-season="winter" alt="">
             <div class="hero-content">
                 <h1 class="hero-title">keta1930</h1>
                 <p class="hero-tagline" data-en="indie dev · agent engineer · stardew farmer" data-zh="独立开发者 · Agent 工程师 · 星露谷农民">indie dev · agent engineer · stardew farmer</p>
@@ -64,7 +79,7 @@
         <div class="panel-body">
             <div class="about-grid">
                 <div class="avatar-frame">
-                    <img src="images/avatar.png" class="pixel-avatar" alt="keta">
+                    <img src="images/avatar.webp" class="pixel-avatar" alt="keta">
                 </div>
                 <div class="about-content">
                     <div class="about-tags" id="aboutTags"></div>
@@ -87,7 +102,7 @@
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
-                    <img src="images/gallery-coding.png" class="frame-image" alt="Coding" loading="lazy">
+                    <img src="images/gallery-coding.webp" class="frame-image" alt="Coding" loading="lazy">
                 </div>
                 <span class="frame-label" data-en="Vibe Coding" data-zh="Vibe Coding">Vibe Coding</span>
             </div>
@@ -95,7 +110,7 @@
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
-                    <img src="images/gallery-gaming.png" class="frame-image" alt="Gaming" loading="lazy">
+                    <img src="images/gallery-gaming.webp" class="frame-image" alt="Gaming" loading="lazy">
                 </div>
                 <span class="frame-label" data-en="Gaming Night" data-zh="游戏之夜">Gaming Night</span>
             </div>
@@ -103,7 +118,7 @@
                 <div class="frame-nail"></div>
                 <div class="frame-string"></div>
                 <div class="frame-border">
-                    <img src="images/gallery-nature.png" class="frame-image" alt="Nature" loading="lazy">
+                    <img src="images/gallery-nature.webp" class="frame-image" alt="Nature" loading="lazy">
                 </div>
                 <span class="frame-label" data-en="Peaceful Moments" data-zh="宁静时光">Peaceful Moments</span>
             </div>

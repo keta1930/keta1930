@@ -10,55 +10,77 @@
 /* ── Season Palettes ── */
 
 .season-spring {
-    --bg: #E5F5D8; --bg-grid: rgba(76,175,80,0.05);
+    --bg: #E5F5D8; --bg-alpha: rgba(229,245,216,0.75); --bg-grid: rgba(76,175,80,0.05);
     --panel-bg: #FFF8F0;
     --brown-dark: #5D4E37; --brown-medium: #8B7B55; --brown-light: #C4B496;
     --green: #4CAF50; --green-light: #81C784;
     --sky: #87CEEB; --gold: #FFD700;
     --accent: #E91E7B; --accent-light: #F48FB1;
     --text: #3D352F; --text-light: #6B5F4F; --cream: #FFF0E8;
-    --fallback-top: #87CEEB; --fallback-mid: #B7E4CF; --fallback-bot: #81C784;
 }
 .season-summer {
-    --bg: #FFF3D6; --bg-grid: rgba(255,152,0,0.04);
+    --bg: #FFF3D6; --bg-alpha: rgba(255,243,214,0.75); --bg-grid: rgba(255,152,0,0.04);
     --panel-bg: #FFFFF0;
     --brown-dark: #5D3A1A; --brown-medium: #8B6914; --brown-light: #C4A76C;
     --green: #388E3C; --green-light: #66BB6A;
     --sky: #42A5F5; --gold: #FFD54F;
     --accent: #FF9800; --accent-light: #FFB74D;
     --text: #3D2B1F; --text-light: #6B5B4F; --cream: #FFF8E1;
-    --fallback-top: #64B5F6; --fallback-mid: #FFE082; --fallback-bot: #388E3C;
 }
 .season-fall {
-    --bg: #F5E6C8; --bg-grid: rgba(93,58,26,0.04);
+    --bg: #F5E6C8; --bg-alpha: rgba(245,230,200,0.75); --bg-grid: rgba(93,58,26,0.04);
     --panel-bg: #FFF8E7;
     --brown-dark: #5D3A1A; --brown-medium: #8B6914; --brown-light: #C4A76C;
     --green: #E67E22; --green-light: #F0983A;
     --sky: #87CEEB; --gold: #FFD700;
     --accent: #E87E4D; --accent-light: #FFAB76;
     --text: #3D2B1F; --text-light: #6B5B4F; --cream: #FAEBD7;
-    --fallback-top: #87CEEB; --fallback-mid: #B7E4CF; --fallback-bot: #5C8A4D;
 }
 .season-winter {
-    --bg: #E4E8F0; --bg-grid: rgba(69,90,100,0.04);
+    --bg: #E4E8F0; --bg-alpha: rgba(228,232,240,0.75); --bg-grid: rgba(69,90,100,0.04);
     --panel-bg: #F5F5FF;
     --brown-dark: #455A64; --brown-medium: #607D8B; --brown-light: #90A4AE;
     --green: #5C6BC0; --green-light: #7986CB;
     --sky: #BBDEFB; --gold: #CFD8DC;
     --accent: #42A5F5; --accent-light: #90CAF9;
     --text: #37474F; --text-light: #546E7A; --cream: #ECEFF1;
-    --fallback-top: #90A4AE; --fallback-mid: #CFD8DC; --fallback-bot: #E8EAF6;
 }
 
 /* ── Night Mode (overrides surface colors, keeps accents) ── */
 
 body.night {
-    --bg: #16192A; --bg-grid: rgba(100,130,200,0.03);
+    --bg: #16192A; --bg-alpha: rgba(22,25,42,0.82); --bg-grid: rgba(100,130,200,0.03);
     --panel-bg: #1E2238;
     --brown-dark: #252842; --brown-medium: #35385A; --brown-light: #45486A;
     --text: #D0C8B8; --text-light: #908878;
     --cream: #252840;
-    --fallback-top: #0D1117; --fallback-mid: #161B22; --fallback-bot: #1A1E2E;
+}
+
+/* ── Full-Page Background ── */
+
+.page-bg { position: fixed; inset: 0; z-index: 0; overflow: hidden; }
+.page-bg-img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; image-rendering: pixelated;
+    opacity: 0; transition: opacity 0.8s;
+}
+.page-bg-img.active { opacity: 1; }
+.page-bg-night {
+    position: absolute; inset: 0;
+    background: rgba(10,12,30,0);
+    transition: background 0.8s;
+    pointer-events: none;
+}
+body.night .page-bg-night { background: rgba(10,12,30,0.4); }
+.page-bg-tint {
+    position: absolute; inset: 0;
+    background: var(--bg-alpha);
+    background-image:
+        linear-gradient(var(--bg-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+    background-size: 16px 16px;
+    transition: background-color 0.6s;
+    pointer-events: none;
 }
 
 /* ── Loading Screen ── */
@@ -106,13 +128,9 @@ body {
     font-size: 20px;
     line-height: 1.6;
     color: var(--text);
-    background-color: var(--bg);
-    background-image:
-        linear-gradient(var(--bg-grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
-    background-size: 16px 16px;
+    background: transparent;
     overflow-x: hidden;
-    transition: background-color 0.6s, color 0.6s;
+    transition: color 0.6s;
 }
 
 #particles { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
@@ -209,46 +227,20 @@ body {
     transform: translateY(-2px);
 }
 
-/* ── Hero Banner ── */
+/* ── Hero ── */
 
 .hero {
-    margin-top: 56px; position: relative; overflow: hidden;
-    background: var(--sky); transition: background-color 0.6s;
-}
-.hero-scene { position: relative; width: 100%; height: 380px; overflow: hidden; }
-.hero-bg-fallback {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, var(--fallback-top) 0%, var(--fallback-mid) 50%, var(--fallback-bot) 100%);
-    transition: background 0.6s;
-}
-.hero-night-overlay {
-    position: absolute; inset: 0;
-    background: rgba(10, 12, 30, 0);
-    transition: background 0.8s;
-    z-index: 2; pointer-events: none;
-}
-body.night .hero-night-overlay {
-    background: rgba(10, 12, 30, 0.45);
-}
-.hero-bg {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    object-fit: cover; image-rendering: pixelated;
-    opacity: 0; transition: opacity 0.8s; z-index: 1;
-}
-.hero-bg.active { opacity: 1; }
-.hero-content {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 48px 24px 32px;
-    background: linear-gradient(transparent, rgba(44,24,16,0.8));
-    text-align: center; z-index: 3;
-}
-body.night .hero-content {
-    background: linear-gradient(transparent, rgba(10,12,25,0.9));
+    margin-top: 56px; position: relative; z-index: 2;
+    min-height: 300px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 60px 24px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, transparent 70%);
 }
 .hero-title {
     font-family: var(--font-heading); font-size: 36px;
     color: #FFD700; text-shadow: 3px 3px 0 rgba(0,0,0,0.6);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 .hero-tagline {
     font-family: var(--font-heading); font-size: 10px;
@@ -297,8 +289,9 @@ body.night .hero-content {
     transition: background-color 0.6s;
 }
 .divider-icon {
-    position: relative; background: var(--bg);
-    padding: 0 16px; font-size: 22px;
+    position: relative; background: var(--panel-bg);
+    padding: 4px 16px; font-size: 22px;
+    border-radius: 4px;
     transition: background-color 0.6s;
 }
 
@@ -369,14 +362,6 @@ body.night .hero-content {
 .gallery-wall {
     max-width: 900px; margin: 0 auto; padding: 20px 24px 28px;
     position: relative; z-index: 2;
-    background: linear-gradient(180deg,
-        transparent 0%, rgba(139,105,20,0.06) 30%,
-        rgba(139,105,20,0.06) 70%, transparent 100%);
-}
-body.night .gallery-wall {
-    background: linear-gradient(180deg,
-        transparent 0%, rgba(30,34,56,0.4) 30%,
-        rgba(30,34,56,0.4) 70%, transparent 100%);
 }
 .gallery-header {
     display: flex; align-items: center; gap: 12px;
@@ -530,8 +515,7 @@ body.night .item-card-title a { color: var(--gold); }
     .nav-logo { order: 0; }
     .nav-controls { order: 1; }
     .nav-links { order: 2; width: 100%; justify-content: center; }
-    .hero { margin-top: 96px; }
-    .hero-scene { height: 260px; }
+    .hero { margin-top: 96px; min-height: 220px; padding: 40px 16px; }
     .hero-title { font-size: 22px; }
     .hero-tagline { font-size: 8px; }
     .game-panel { margin-left: 12px; margin-right: 12px; }
@@ -550,8 +534,7 @@ body.night .item-card-title a { color: var(--gold); }
     .nav-link { padding: 6px 10px; font-size: 8px; }
     .panel-header h2 { font-size: 11px; }
     .hero-title { font-size: 18px; }
-    .hero-content { padding: 32px 16px 24px; }
-    .hero-scene { height: 200px; }
+    .hero { min-height: 180px; }
     .item-card-header { flex-direction: column; gap: 8px; }
     .gallery-inner { gap: 20px; }
     .frame-border { width: 140px; padding: 6px; }

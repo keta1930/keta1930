@@ -112,7 +112,7 @@ function doSeason(season) {
     if (isNight) classes.push('night');
     document.body.className = classes.join(' ');
 
-    document.querySelectorAll('.hero-bg').forEach(i => i.classList.toggle('active', i.dataset.season === season));
+    document.querySelectorAll('.page-bg-img').forEach(i => i.classList.toggle('active', i.dataset.season === season));
     document.querySelectorAll('.season-btn').forEach(b => b.classList.toggle('active', b.dataset.season === season));
     document.querySelectorAll('.divider-icon').forEach(el => { el.textContent = SEASON_CONFIG[season].divider; });
 

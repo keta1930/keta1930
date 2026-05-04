@@ -133,6 +133,27 @@ body {
     transition: color 0.6s;
 }
 
+/* ── Pixel Cursor ── */
+
+body { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect x='6' y='0' width='4' height='4' fill='%235C8A4D'/><rect x='4' y='4' width='4' height='4' fill='%235C8A4D'/><rect x='2' y='8' width='4' height='4' fill='%235C8A4D'/><rect x='0' y='12' width='4' height='4' fill='%235C8A4D'/><rect x='8' y='4' width='4' height='4' fill='%2381C784'/><rect x='6' y='8' width='4' height='4' fill='%2381C784'/><rect x='4' y='12' width='4' height='4' fill='%2381C784'/></svg>") 0 0, auto; }
+body.season-summer { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect x='6' y='0' width='4' height='4' fill='%23FF9800'/><rect x='4' y='4' width='4' height='4' fill='%23FF9800'/><rect x='2' y='8' width='4' height='4' fill='%23FF9800'/><rect x='0' y='12' width='4' height='4' fill='%23FF9800'/><rect x='8' y='4' width='4' height='4' fill='%23FFB74D'/><rect x='6' y='8' width='4' height='4' fill='%23FFB74D'/><rect x='4' y='12' width='4' height='4' fill='%23FFB74D'/></svg>") 0 0, auto; }
+body.season-fall { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect x='6' y='0' width='4' height='4' fill='%23E67E22'/><rect x='4' y='4' width='4' height='4' fill='%23E67E22'/><rect x='2' y='8' width='4' height='4' fill='%23E67E22'/><rect x='0' y='12' width='4' height='4' fill='%23E67E22'/><rect x='8' y='4' width='4' height='4' fill='%23F0983A'/><rect x='6' y='8' width='4' height='4' fill='%23F0983A'/><rect x='4' y='12' width='4' height='4' fill='%23F0983A'/></svg>") 0 0, auto; }
+body.season-winter { cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><rect x='6' y='0' width='4' height='4' fill='%235C6BC0'/><rect x='4' y='4' width='4' height='4' fill='%235C6BC0'/><rect x='2' y='8' width='4' height='4' fill='%235C6BC0'/><rect x='0' y='12' width='4' height='4' fill='%235C6BC0'/><rect x='8' y='4' width='4' height='4' fill='%237986CB'/><rect x='6' y='8' width='4' height='4' fill='%237986CB'/><rect x='4' y='12' width='4' height='4' fill='%237986CB'/></svg>") 0 0, auto; }
+
+/* ── Scroll Progress Bar ── */
+
+.scroll-progress {
+    position: fixed; top: 56px; left: 0; right: 0;
+    height: 4px; z-index: 99; pointer-events: none;
+    background: rgba(0,0,0,0.15);
+}
+.scroll-progress-fill {
+    height: 100%; width: 0;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green-light);
+    transition: background-color 0.6s;
+}
+
 #particles { position: fixed; inset: 0; pointer-events: none; z-index: 1; }
 
 /* ── Overlays ── */
@@ -310,6 +331,11 @@ body {
 .pixel-avatar {
     width: 100%; height: auto; display: block;
     image-rendering: pixelated;
+    animation: breathe 3.5s ease-in-out infinite;
+}
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }
 .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .pixel-tag {
@@ -467,6 +493,7 @@ body.night .gallery-header h2 { color: var(--gold); }
 }
 .picture-frame { cursor: pointer; }
 
+
 /* ── Item Grid ── */
 
 .item-grid {
@@ -476,11 +503,10 @@ body.night .gallery-header h2 { color: var(--gold); }
 .item-card {
     background: var(--cream); border: 3px solid var(--brown-medium);
     box-shadow: inset 0 0 0 2px var(--brown-light), 4px 4px 0 rgba(0,0,0,0.15);
-    padding: 24px; transition: all 0.15s steps(3);
+    padding: 24px; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    transform-style: preserve-3d; perspective: 600px;
 }
 .item-card:hover {
-    transform: translateY(-4px);
-    box-shadow: inset 0 0 0 2px var(--brown-light), 4px 8px 0 rgba(0,0,0,0.15);
     border-color: var(--green);
 }
 .item-card-header {
@@ -559,6 +585,11 @@ body.night .item-card-title a { color: var(--gold); }
     background: rgba(0,0,0,0.3); padding: 5px 12px;
     border: 2px solid var(--brown-medium);
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+.footer-shortcuts {
+    font-family: var(--font-heading); font-size: 8px;
+    color: var(--brown-light); letter-spacing: 0.5px;
+    margin-bottom: 12px; opacity: 0.7;
 }
 .footer-text { font-size: 18px; color: var(--brown-light); }
 

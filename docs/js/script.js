@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     initKeyboard();
     initGalleryLightbox();
     initVisitorCounter();
+    initScrollProgress();
+    initCardTilt();
     updateLoadingBar(80);
 });
 
@@ -568,6 +570,36 @@ async function initVisitorCounter() {
         el.textContent = '------';
     }
 }
+
+/* ── Scroll Progress ── */
+
+function initScrollProgress() {
+    const fill = document.getElementById('scrollFill');
+    if (!fill) return;
+    window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        fill.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+    }, { passive: true });
+}
+
+/* ── Card 3D Tilt ── */
+
+function initCardTilt() {
+    document.querySelectorAll('.item-card:not(.placeholder)').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
+            card.style.boxShadow = `inset 0 0 0 2px var(--brown-light), ${-x * 8 + 4}px ${y * 6 + 8}px 0 rgba(0,0,0,0.15)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        });
+    });
+}
+
 
 /* ── Console ── */
 

@@ -10,7 +10,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="season-spring">
+    <div class="season-overlay" id="seasonOverlay"></div>
     <canvas id="particles"></canvas>
 
     <nav class="pixel-nav" id="nav">
@@ -27,16 +28,27 @@
                     <span data-en="Papers" data-zh="论文">Papers</span>
                 </a>
             </div>
-            <button class="lang-btn" id="langSwitcher">
-                <span id="currentLang">EN</span>
-            </button>
+            <div class="nav-controls">
+                <div class="season-switcher" id="seasonSwitcher">
+                    <button class="season-btn active" data-season="spring" title="Spring">🌸</button>
+                    <button class="season-btn" data-season="summer" title="Summer">☀️</button>
+                    <button class="season-btn" data-season="fall" title="Fall">🍂</button>
+                    <button class="season-btn" data-season="winter" title="Winter">❄️</button>
+                </div>
+                <button class="lang-btn" id="langSwitcher">
+                    <span id="currentLang">EN</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <header class="hero" id="hero">
         <div class="hero-scene">
             <div class="hero-bg-fallback"></div>
-            <img src="images/banner.png" alt="" class="hero-bg">
+            <img src="images/banner-spring.png" class="hero-bg active" data-season="spring" alt="">
+            <img src="images/banner-summer.png" class="hero-bg" data-season="summer" alt="">
+            <img src="images/banner.png" class="hero-bg" data-season="fall" alt="">
+            <img src="images/banner-winter.png" class="hero-bg" data-season="winter" alt="">
             <div class="hero-content">
                 <h1 class="hero-title">keta1930</h1>
                 <p class="hero-tagline" data-en="indie dev · agent engineer · stardew farmer" data-zh="独立开发者 · Agent 工程师 · 星露谷农民">indie dev · agent engineer · stardew farmer</p>
@@ -63,6 +75,43 @@
         </div>
     </section>
 
+    <div class="section-divider"><span class="divider-icon" id="divider1">🌷</span></div>
+
+    <section class="gallery-wall">
+        <div class="gallery-header">
+            <span class="panel-icon">🖼️</span>
+            <h2 data-en="Life" data-zh="生活">Life</h2>
+        </div>
+        <div class="gallery-inner">
+            <div class="picture-frame" style="--tilt: -2deg">
+                <div class="frame-nail"></div>
+                <div class="frame-string"></div>
+                <div class="frame-border">
+                    <img src="images/gallery-coding.png" class="frame-image" alt="Coding" loading="lazy">
+                </div>
+                <span class="frame-label" data-en="Vibe Coding" data-zh="Vibe Coding">Vibe Coding</span>
+            </div>
+            <div class="picture-frame" style="--tilt: 1.5deg">
+                <div class="frame-nail"></div>
+                <div class="frame-string"></div>
+                <div class="frame-border">
+                    <img src="images/gallery-gaming.png" class="frame-image" alt="Gaming" loading="lazy">
+                </div>
+                <span class="frame-label" data-en="Gaming Night" data-zh="游戏之夜">Gaming Night</span>
+            </div>
+            <div class="picture-frame" style="--tilt: -1deg">
+                <div class="frame-nail"></div>
+                <div class="frame-string"></div>
+                <div class="frame-border">
+                    <img src="images/gallery-nature.png" class="frame-image" alt="Nature" loading="lazy">
+                </div>
+                <span class="frame-label" data-en="Peaceful Moments" data-zh="宁静时光">Peaceful Moments</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"><span class="divider-icon" id="divider2">🌷</span></div>
+
     <section id="projects" class="game-panel">
         <div class="panel-header">
             <span class="panel-icon">⚒️</span>
@@ -72,6 +121,8 @@
             <div class="item-grid" id="projectsGrid"></div>
         </div>
     </section>
+
+    <div class="section-divider"><span class="divider-icon" id="divider3">🌷</span></div>
 
     <section id="papers" class="game-panel">
         <div class="panel-header">
@@ -92,8 +143,6 @@
             <p class="footer-text" data-en="Built with ❤️ and hosted on GitHub Pages" data-zh="用 ❤️ 构建，托管于 GitHub Pages">Built with ❤️ and hosted on GitHub Pages</p>
         </div>
     </footer>
-
-    <div class="season-badge" id="seasonBadge"></div>
 
     <script src="js/script.js"></script>
 </body>

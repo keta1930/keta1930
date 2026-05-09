@@ -28,6 +28,23 @@
   },
   "projects": [
     {
+      "title": "AI Workbench",
+      "url": "https://github.com/EconAgent/ai-workbench",
+      "stars": "New",
+      "description": {
+        "en": "A Claude Code automation workbench for handling daily repetitive tasks.",
+        "zh": "Claude Code 自动化工作台，用于处理日常重复性工作。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": { "en": "View Source", "zh": "查看源码" },
+          "url": "https://github.com/EconAgent/ai-workbench"
+        }
+      ]
+    },
+    {
       "title": "Agent Graph",
       "url": "https://github.com/keta1930/agent-graph",
       "stars": 194,

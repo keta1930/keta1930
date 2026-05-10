@@ -28,6 +28,23 @@
   },
   "projects": [
     {
+      "title": "Agent Course Platform",
+      "url": "https://github.com/ai-lingnan/econai-agent-platform",
+      "stars": "New",
+      "description": {
+        "en": "An agent-powered course platform with AI teaching assistant, Skills, and agent-based evaluation.",
+        "zh": "智能体课程平台，集成 AI 助教、Skill 与 Agent 评教。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": { "en": "View Source", "zh": "查看源码" },
+          "url": "https://github.com/ai-lingnan/econai-agent-platform"
+        }
+      ]
+    },
+    {
       "title": "AI Workbench",
       "url": "https://github.com/EconAgent/ai-workbench",
       "stars": "New",

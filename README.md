@@ -44,18 +44,6 @@ I care deeply about how AI agents will reshape our economy and society — the f
 
 ---
 
----
-
-### Contribution Snake
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keta1930/keta1930/output/snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keta1930/keta1930/output/snake.svg" />
-  <img alt="contribution snake" src="https://raw.githubusercontent.com/keta1930/keta1930/output/snake.svg" />
-</picture>
-
----
-
 <p align="center">
   <i>Pursuing my value in the age of AI.</i>
 </p>

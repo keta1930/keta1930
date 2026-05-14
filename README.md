@@ -1,7 +1,7 @@
 # keta1930
 
 <p align="center">
-  <b>Independent Developer · AI Agent Engineer · Vibe Coder · Stardew Farmer</b>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com/?lines=Independent+Developer;AI+Agent+Engineer;Vibe+Coder;Stardew+Farmer&center=true&width=440&height=35&font=VT323&size=24&duration=3000&pause=2000&color=5C8A4D" alt="Typing SVG" /></a>
 </p>
 
 <p align="center">
@@ -41,6 +41,18 @@ I care deeply about how AI agents will reshape our economy and society — the f
 ### Personal Page
 
 🌾 **[keta1930.github.io/keta1930](https://keta1930.github.io/keta1930/)** — A Stardew Valley themed personal page featuring seasonal backgrounds, day/night mode, ambient music, and a gallery wall. Try pressing `1-4` to switch seasons, `N` for night mode, `M` to toggle music.
+
+---
+
+---
+
+### Contribution Snake
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/keta1930/keta1930/output/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/keta1930/keta1930/output/snake.svg" />
+  <img alt="contribution snake" src="https://raw.githubusercontent.com/keta1930/keta1930/output/snake.svg" />
+</picture>
 
 ---
 

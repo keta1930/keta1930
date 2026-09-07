@@ -16,31 +16,3 @@
 Hey, I'm keta — an indie developer focused on AI agent systems. You'll usually find me vibe coding with music on and crafting multi-agent frameworks.
 
 I care deeply about how AI agents will reshape our economy and society — the future of work, technological disruption, and what it all means for everyday people. I follow the cutting edge closely, because I believe technology is what propels humanity into the unknown.
-
----
-
-### Projects
-
-| Project | Description |
-|---------|-------------|
-| [**Agent Graph**](https://github.com/keta1930/agent-graph) | A Multi-Agent System built on the principles of Context Engineering |
-| [**Agent Course Platform**](https://github.com/ai-lingnan/econai-agent-platform) | An agent-powered course platform with AI teaching assistant, Skills, and agent-based evaluation |
-| [**Survey-v1-3B-Beta**](https://huggingface.co/keta1933/Survey-v1-3B-Beta) | A role-playing language model specialized for survey research scenarios |
-
----
-
-### Research
-
-- **[Simulating Macroeconomic Expectations using LLM Agents](https://arxiv.org/abs/2505.17648)** — Can LLM agents simulate human macroeconomic expectations? (arXiv, 2025)
-
----
-
-### Personal Page
-
-🌾 **[keta1930.github.io/keta1930](https://keta1930.github.io/keta1930/)** — A Stardew Valley themed personal page featuring seasonal backgrounds, day/night mode, ambient music, and a gallery wall. Try pressing `1-4` to switch seasons, `N` for night mode, `M` to toggle music.
-
----
-
-<p align="center">
-  <i>Pursuing my value in the age of AI.</i>
-</p>

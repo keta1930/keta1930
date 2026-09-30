@@ -23,10 +23,67 @@
         "icon": "fab fa-github",
         "label": "GitHub @keta1930",
         "url": "https://github.com/keta1930"
+      },
+      {
+        "type": "blog",
+        "icon": "fas fa-pen-nib",
+        "label": "Keta’s Field Notes",
+        "url": "https://keta1930.github.io/blog/"
       }
     ]
   },
   "projects": [
+    {
+      "title": "what-the-jev",
+      "url": "https://github.com/keta1930/what-the-jev",
+      "stars": "New",
+      "description": {
+        "en": "Reproducible examples and experiments exploring Jev decision-model capabilities and limits across tasks.",
+        "zh": "通过可复现的示例与实验，探索 Jev 决策模型在不同任务中的能力与局限。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": { "en": "View Source", "zh": "查看源码" },
+          "url": "https://github.com/keta1930/what-the-jev"
+        }
+      ]
+    },
+    {
+      "title": "JSONL Native Reader",
+      "url": "https://github.com/keta1930/jsonl-native-reader",
+      "stars": "New",
+      "description": {
+        "en": "A VS Code extension that reads JSONL and NDJSON as formatted JSON arrays in the native read-only editor, preserving original number literals and string escapes.",
+        "zh": "VS Code 插件，在原生只读编辑器中将 JSONL 和 NDJSON 展示为格式化 JSON 数组，保留原始数字字面量与字符串转义。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": { "en": "View Source", "zh": "查看源码" },
+          "url": "https://github.com/keta1930/jsonl-native-reader"
+        }
+      ]
+    },
+    {
+      "title": "Parquet Local Reader",
+      "url": "https://github.com/keta1930/parquet-reader",
+      "stars": "New",
+      "description": {
+        "en": "A local, read-only Parquet table viewer for VS Code with paging, schema inspection, and precise large-integer display.",
+        "zh": "VS Code 本地只读 Parquet 表格查看插件，支持分页、Schema 查看和大整数精确显示。"
+      },
+      "links": [
+        {
+          "type": "github",
+          "icon": "fab fa-github",
+          "label": { "en": "View Source", "zh": "查看源码" },
+          "url": "https://github.com/keta1930/parquet-reader"
+        }
+      ]
+    },
     {
       "title": "Agent Course Platform",
       "url": "https://github.com/ai-lingnan/econai-agent-platform",
